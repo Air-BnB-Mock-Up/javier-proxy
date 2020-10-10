@@ -15,8 +15,8 @@ app.get('/reviews/initial/:locationId', (req, res) => {
   .catch ( err => res.status(404).send('got results'));
 })
 
-app.get('/mosaic/:locationId', (req, res) => {
-  axios.get(`http://localhost:1000/mosaic/${req.params.locationId}`)
+app.get('/mosaic/photos/:locationId', (req, res) => {
+  axios.get(`http://localhost:1000/mosaic/photos/${req.params.locationId}`)
   .then(result => {
     console.log('success');
     res.status(200).send(result.data);
